@@ -16,13 +16,13 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Used for a default title
-APP_NAME = 'mysite'   # Add
+APP_NAME = 'mysite'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'g$iqqu&*mw4_sg3(#ld0sqaalxebel&168^yj%i&sgrw(fmn@w'
+SECRET_KEY = 'secret'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,8 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-
-    # Extensions - installed with pip3 / requirements.txt
     'django_extensions', 
     'crispy_forms',  
     'rest_framework', 
@@ -48,11 +46,11 @@ INSTALLED_APPS = [
     'taggit',
     'home.apps.HomeConfig',
     'ads.apps.AdsConfig',
-    # Sample Applications - don't copy
+   
 ]
 
 # When we get to crispy forms :)
-CRISPY_TEMPLATE_PACK = 'bootstrap3'  # Add
+CRISPY_TEMPLATE_PACK = 'bootstrap3' 
 
 # When we get to tagging
 TAGGIT_CASE_INSENSITIVE = True
@@ -65,7 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'social_django.middleware.SocialAuthExceptionMiddleware',   # Add
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -98,10 +96,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cyrex$ads',
-        'USER': 'cyrex',
-        'PASSWORD': 'Django2021',
-        'HOST': 'cyrex.mysql.pythonanywhere-services.com',
+        'NAME': 'db_name',
+        'USER': 'username',
+        'PASSWORD': 'db_password',
+        'HOST': 'db_host',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         }
@@ -183,24 +181,3 @@ LOGIN_REDIRECT_URL = '/'
 # https://coderwall.com/p/uzhyca/quickly-setup-sql-query-logging-django
 # https://stackoverflow.com/questions/12027545/determine-if-django-is-running-under-the-development-server
 
-'''  # Leave off for now
-import sys
-if (len(sys.argv) >= 2 and sys.argv[1] == 'runserver'):
-    print('Running locally')
-    LOGGING = {
-        'version': 1,
-        'disable_existing_loggers': False,
-        'handlers': {
-            'console': {
-                'level': 'DEBUG',
-                'class': 'logging.StreamHandler',
-            }
-        },
-        'loggers': {
-            'django.db.backends': {
-                'handlers': ['console'],
-                'level': 'DEBUG',
-            },
-        }
-    }
-'''
