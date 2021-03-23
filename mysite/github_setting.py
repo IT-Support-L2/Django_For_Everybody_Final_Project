@@ -1,2 +1,0 @@
-SOCIAL_AUTH_GITHUB_KEY = 'client_id'
-SOCIAL_AUTH_GITHUB_SECRET = 'secret'
